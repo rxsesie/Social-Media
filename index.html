@@ -3,23 +3,1077 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strategic Marketing Plan — Preview</title>
+<title>Your Home Sale — Document Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  /* ── BASE (matches existing guide style) ── */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Lato', sans-serif; background: #fff; color: #111; font-size: 15px; line-height: 1.65; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+    color: #111;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .cover-left {
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+  }
+
+  .cover-eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 32px;
+  }
+
+  .cover-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .cover-left h1 em {
+    font-style: italic;
+    color: #ccc;
+  }
+
+  .cover-tagline {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 360px;
+    border-left: 2px solid #333;
+    padding-left: 20px;
+    margin-bottom: 48px;
+  }
+
+  .cover-address {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  .cover-right {
+    background: #f5f5f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    border-left: 1px solid #e0e0e0;
+  }
+
+  .cover-right h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .toc-list li a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e8e8e8;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  .toc-list li a:hover { color: #000; }
+
+  .toc-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #ccc;
+    width: 28px;
+    flex-shrink: 0;
+  }
+
+  .toc-list li a span { flex: 1; }
+  .toc-list li a::after { content: '→'; color: #ccc; font-size: 0.85rem; }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .page:last-of-type { border-bottom: none; }
+
+  /* ── SECTION HEADER ── */
+  .doc-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #111;
+  }
+
+  .doc-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: #eee;
+    line-height: 1;
+    font-style: italic;
+    user-select: none;
+  }
+
+  .doc-header-text {}
+
+  .doc-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #999;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .doc-header-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.2;
+    color: #111;
+    margin-bottom: 12px;
+  }
+
+  .doc-header-text p {
+    color: #777;
+    font-size: 0.88rem;
+    font-weight: 300;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  /* ── CLAUSE CARDS ── */
+  .clauses {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: #eee;
+    border: 1px solid #eee;
+  }
+
+  .clause {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .clause-label {
+    background: #f8f8f8;
+    padding: 28px 24px;
+    border-right: 1px solid #eee;
+  }
+
+  .clause-label h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #111;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .clause-label .tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #aaa;
+    display: block;
+  }
+
+  .clause-body {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .clause-body p {
+    font-size: 0.88rem;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .clause-body strong {
+    font-weight: 700;
+    color: #111;
+  }
+
+  /* ── CALLOUT TYPES ── */
+  .note {
+    background: #f9f9f9;
+    border-left: 3px solid #111;
+    padding: 14px 18px;
+    font-size: 0.83rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .note b {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #111;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .warn {
+    background: #fffbf0;
+    border-left: 3px solid #c8a400;
+    padding: 14px 18px;
+    font-size: 0.83rem;
+    color: #5a4a00;
+    line-height: 1.6;
+  }
+
+  .warn b {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a400;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .danger {
+    background: #fff8f8;
+    border-left: 3px solid #c00;
+    padding: 14px 18px;
+    font-size: 0.83rem;
+    color: #600;
+    line-height: 1.6;
+  }
+
+  .danger b {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c00;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── DIVIDER ── */
+  .rule {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 8px 0 0;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .t-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .t-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 44px;
+    bottom: -1px;
+    width: 2px;
+    background: #eee;
+    z-index: 0;
+  }
+
+  .t-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+  }
+
+  .t-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #111;
+    border: 3px solid #fff;
+    outline: 2px solid #111;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .t-content {
+    padding: 12px 0 40px 20px;
+  }
+
+  .t-phase {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .t-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .t-content p {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .t-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .t-pill {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    color: #666;
+    border-radius: 2px;
+  }
+
+  /* ── TABLE ── */
+  table.simple {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.83rem;
+    margin: 16px 0;
+  }
+
+  table.simple thead tr {
+    border-bottom: 2px solid #111;
+  }
+
+  table.simple th {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 700;
+  }
+
+  table.simple td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  table.simple td:first-child { color: #111; font-weight: 400; }
+
+  /* ── CHECKLIST ── */
+  .checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .checks li {
+    list-style: none;
+    font-size: 0.82rem;
+    color: #444;
+    padding: 8px 12px 8px 28px;
+    background: #f8f8f8;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .checks li::before {
+    content: '✓';
+    position: absolute;
+    left: 10px;
+    color: #111;
+    font-size: 0.75rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 760px) {
+    .cover { grid-template-columns: 1fr; min-height: auto; }
+    .cover-left, .cover-right { padding: 60px 32px; }
+    .doc-header { grid-template-columns: 1fr; gap: 12px; }
+    .doc-num { font-size: 3rem; }
+    .clause { grid-template-columns: 1fr; }
+    .clause-label { border-right: none; border-bottom: 1px solid #eee; }
+    .checks { grid-template-columns: 1fr; }
+    .page { padding: 60px 24px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
-     STRATEGIC MARKETING PLAN SECTION
-     Drop this <section> block into your existing listing guide HTML.
-     Requires: Playfair Display + Lato from Google Fonts (already loaded).
-     The Instagram embed script tag at the bottom must appear once per page.
-══════════════════════════════════════════════════════════════ -->
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-left">
+    <p class="cover-eyebrow">Listing Presentation · Document Reference Guide</p>
+    <h1>What You're<br><em>Signing Today</em></h1>
+    <p class="cover-tagline">A plain-language guide to every document in your listing package — so you can sign with confidence.</p>
+    <p class="cover-address">540 Road 662 · Dayton, Texas 77535</p>
+  </div>
+  <div class="cover-right">
+    <h2>Inside This Guide</h2>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1</span><span>Listing Agreement</span></a></li>
+      <li><a href="#s2"><span class="toc-num">2</span><span>Seller's Disclosure</span></a></li>
+      <li><a href="#s3"><span class="toc-num">3</span><span>HOA Addendum</span></a></li>
+      <li><a href="#s4"><span class="toc-num">4</span><span>Propane Addendum</span></a></li>
+      <li><a href="#s5"><span class="toc-num">5</span><span>On-Site Sewer Notice</span></a></li>
+      <li><a href="#s6"><span class="toc-num">6</span><span>Wire Fraud Warning</span></a></li>
+      <li><a href="#s7"><span class="toc-num">7</span><span>Brokerage Services</span></a></li>
+      <li><a href="#s8"><span class="toc-num">8</span><span>Consumer Notice</span></a></li>
+      <li><a href="#s9"><span class="toc-num">9</span><span>Listing to Closing</span></a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ─── DOC 1: LISTING AGREEMENT ─── -->
+<section class="page" id="s1">
+  <div class="doc-header">
+    <div class="doc-num">1</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document One</span>
+      <h2>Listing Agreement</h2>
+      <p>This is your contract with the broker. It gives your agent the legal right to market and sell your home on your behalf. Everything else in your listing flows from this document.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Parties &amp; Property</h3>
+        <span class="tag">Para. 1–2</span>
+      </div>
+      <div class="clause-body">
+        <p>Names you (Seller) and The Agency Team, LLC (Broker). Your legal contract is with the brokerage — not just your individual agent. The property section defines <strong>exactly what is being sold</strong>: the land, everything permanently attached (appliances, fans, fixtures, HVAC), and accessories that come with the home.</p>
+        <div class="warn"><b>Important</b>If you want to take something with you — a chandelier, a mounted TV, a garden sculpture — it must be listed as an <strong>Exclusion</strong> before you sign. Anything not excluded is included in the sale.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Listing Price</h3>
+        <span class="tag">Para. 3</span>
+      </div>
+      <div class="clause-body">
+        <p>The price your agent will advertise the home at. This is your starting point — you always have final say on whether to accept any offer. You're agreeing to sell at this price <strong>or any price acceptable to you</strong>.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Term</h3>
+        <span class="tag">Para. 4</span>
+      </div>
+      <div class="clause-body">
+        <p>The listing is active from <strong>March 24, 2026 through September 24, 2026</strong> — six months. During this period, you cannot sign with another broker without written approval. If you already have a binding sale contract when this begins, the listing is void automatically.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Commission</h3>
+        <span class="tag">Para. 5</span>
+      </div>
+      <div class="clause-body">
+        <p>You agree to pay <strong>6% of the sale price</strong> at closing. The title company deducts this automatically from your proceeds — you don't write a separate check. This total is shared between your listing broker and the buyer's broker per their agreement.</p>
+        <div class="note"><b>Protection Period</b>After the listing expires, there's a <strong>21-day window</strong>. If someone who toured the home during the listing buys it within those 21 days, commission is still owed. Your agent will send you a list of those buyers within 10 days of expiration.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>MLS &amp; Marketing</h3>
+        <span class="tag">Para. 6</span>
+      </div>
+      <div class="clause-body">
+        <p>Your home will be filed with the MLS within 5 days of the listing start date — putting it on Zillow, Realtor.com, and hundreds of other sites. You grant the broker a permanent license to use all photos and content you provide, even after the listing ends.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Access &amp; Keybox</h3>
+        <span class="tag">Para. 7</span>
+      </div>
+      <div class="clause-body">
+        <p>You're authorizing agents, inspectors, and appraisers to enter at reasonable times. A keybox <strong>is authorized</strong> for this listing — showings are managed through Showing Smart. The broker is not liable for injury or theft during access.</p>
+        <div class="warn"><b>Before Your First Showing</b>Remove medications, jewelry, firearms, and personal financial documents. Once the keybox is on, strangers will walk through your home.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Intermediary</h3>
+        <span class="tag">Para. 9</span>
+      </div>
+      <div class="clause-body">
+        <p>Selected for this listing. If a buyer <em>also represented by your broker</em> makes an offer, the broker becomes a <strong>neutral intermediary</strong> — they can no longer advise either side strategically. They facilitate the transaction but cannot take your side in negotiation.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Your Obligations</h3>
+        <span class="tag">Para. 13</span>
+      </div>
+      <div class="clause-body">
+        <p>Cooperate with showings, keep disclosures updated, and — critically — <strong>refer all buyer inquiries to your agent</strong>. Do not negotiate directly with anyone, even a neighbor who expresses interest. Always say: "Please contact my agent."</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── DOC 2: SELLER'S DISCLOSURE ─── -->
+<section class="page" id="s2">
+  <div class="doc-header">
+    <div class="doc-num">2</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Two</span>
+      <h2>Seller's Disclosure Notice</h2>
+      <p>Texas law requires you to disclose everything you <em>know</em> about your property's condition. This isn't a warranty — it's a record of your honest knowledge on the date you sign it.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Section 1<br>What the Home Has</h3>
+        <span class="tag">Features Checklist</span>
+      </div>
+      <div class="clause-body">
+        <p>A checklist of items in the home — ceiling fans, AC, heat, pool, garage, water heater, and more. Mark <strong>Y / N / Unknown</strong> for each. At the end, you answer whether any items are not working or need repair. Be specific if yes.</p>
+        <div class="note"><b>Note</b>Checking "Yes" that an item exists does <strong>not</strong> mean it conveys. The sales contract determines what transfers — this form is only about condition.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Section 2<br>Known Defects</h3>
+        <span class="tag">Structural &amp; Mechanical</span>
+      </div>
+      <div class="clause-body">
+        <p>Are you aware of defects in: ceilings, doors, electrical, exterior walls, floors, foundation, plumbing, roof, windows? Mark honestly. Foundation and roof are the two items buyers scrutinize most in this region.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Section 3<br>Special Conditions</h3>
+        <span class="tag">Hazards &amp; History</span>
+      </div>
+      <div class="clause-body">
+        <p>Covers: aluminum wiring, asbestos, diseased trees, termites (active or prior), previous fires, previous foundation/roof repairs, lead paint, wood rot, soil movement, hazardous waste, and more.</p>
+        <div class="danger"><b>Required Disclosure</b>Prior termite treatment, previous flooding, or repaired foundation damage <strong>must be disclosed</strong> even if fully remediated. Hiding known defects can result in post-closing lawsuits and fraud claims.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Sections 5–7<br>Flood History</h3>
+        <span class="tag">Critical in Liberty County</span>
+      </div>
+      <div class="clause-body">
+        <p>You must disclose: flood zone designation (100-year / 500-year / floodway), any previous flooding from natural events or reservoir releases, water penetration into structures, any flood insurance claims ever filed, and any FEMA or SBA disaster assistance received.</p>
+        <div class="danger"><b>Non-Negotiable</b>If this property experienced flooding during any storm event — Harvey, the 2019 floods, or any other — you must disclose it regardless of whether you repaired everything. Buyers in this area will look for this specifically.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Section 8<br>Other Disclosures</h3>
+        <span class="tag">HOA, Permits, Legal</span>
+      </div>
+      <div class="clause-body">
+        <p>Unpermitted work or code violations, HOA membership details and unpaid dues, deed restriction violations, pending lawsuits, health or safety hazards, mold remediation, propane service area, subsidence district.</p>
+        <div class="warn"><b>Unpermitted Work</b>If you added a room, deck, or structure without pulling permits, disclose it here. Inspectors find these — it's better for buyers to know upfront.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Sections 9–13<br>Final Items</h3>
+        <span class="tag">Inspections, Taxes, Smoke</span>
+      </div>
+      <div class="clause-body">
+        <p><strong>Inspections:</strong> Any professional inspection reports from the last 4 years must be attached and disclosed.<br>
+        <strong>Tax exemptions:</strong> Your homestead or senior exemption will not transfer — the buyer's taxes may be significantly higher than yours. They should verify independently.<br>
+        <strong>Smoke detectors:</strong> Confirm working detectors are installed per Texas law (Chapter 766).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── DOC 3: HOA ─── -->
+<section class="page" id="s3">
+  <div class="doc-header">
+    <div class="doc-num">3</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Three</span>
+      <h2>HOA Addendum</h2>
+      <p>Encino Estates POA · 281-354-1299. Because this property has a mandatory homeowners association, this addendum governs how HOA information is handled during the sale.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Subdivision Information</h3>
+        <span class="tag">Section A</span>
+      </div>
+      <div class="clause-body">
+        <p>"Subdivision Information" means the HOA's deed restrictions, bylaws, rules, and a Resale Certificate. The Resale Certificate confirms current dues, any money owed by the seller, and the HOA's financial standing.</p>
+        <p>For this transaction, <strong>Option 4 is selected</strong> — the buyer has waived the right to receive the full HOA packet. The HOA is still authorized to release information if requested by the buyer or title company.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Material Changes</h3>
+        <span class="tag">Section B</span>
+      </div>
+      <div class="clause-body">
+        <p>If you learn of any significant HOA change — a special assessment, fee increase, or major rule change — before closing, you must notify the buyer. This gives them the right to terminate if the change is materially adverse.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Transfer Fees</h3>
+        <span class="tag">Section C · $250 Cap</span>
+      </div>
+      <div class="clause-body">
+        <p>The buyer pays all HOA transfer fees, deposits, and charges up to <strong>$250</strong>. Any amount above $250 is paid by you, the seller. Regular ongoing dues are prorated separately at closing based on the closing date.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── DOC 4: PROPANE ─── -->
+<section class="page" id="s4">
+  <div class="doc-header">
+    <div class="doc-num">4</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Four</span>
+      <h2>Propane Gas Addendum</h2>
+      <p>A required legal notice disclosing that this property may be located in a propane gas system service area instead of municipal natural gas.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+    <div class="clause">
+      <div class="clause-label">
+        <h3>What This Means</h3>
+        <span class="tag">TREC No. 47-0</span>
+      </div>
+      <div class="clause-body">
+        <p>This area may be served by a private propane distribution company rather than city gas lines. This is common in rural Liberty County. The buyer is being informed that: there may be setup costs or deposits to establish propane service, there may be a time period to construct infrastructure before service begins, and they should contact the propane distributor to understand rates and timing before closing.</p>
+        <p>Texas law (§141.010, Utilities Code) requires this notice plus a copy of any recorded notice the propane company has filed with the county clerk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── DOC 5: SEWER ─── -->
+<section class="page" id="s5">
+  <div class="doc-header">
+    <div class="doc-num">5</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Five</span>
+      <h2>On-Site Sewer Facility</h2>
+      <p>This property is not connected to municipal sewer. This notice informs the buyer about the septic system they will inherit — what type it is, its condition, and their responsibilities.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>System Description</h3>
+        <span class="tag">Section A</span>
+      </div>
+      <div class="clause-body">
+        <p>Disclose the type of system (Septic Tank or Aerobic Treatment), the type of distribution system and drain field location, who installed it, and approximately how old it is. Fill in what you know — mark Unknown for what you don't.</p>
+        <div class="warn"><b>Aerobic Systems Require a Maintenance Contract</b>If this is an aerobic treatment system, a licensed maintenance contract must be active at all times. This contract must transfer to the buyer at closing or the buyer must establish a new one.</div>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Maintenance History</h3>
+        <span class="tag">Section B</span>
+      </div>
+      <div class="clause-body">
+        <p>Disclose: any active maintenance contract and its expiration, when the tank was last pumped, any known defects or malfunctions, and whether warranty documentation is available. A septic tank should generally be pumped every 3–5 years.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Permit Transfer</h3>
+        <span class="tag">Section C</span>
+      </div>
+      <div class="clause-body">
+        <p>The notice states in bold: <strong>"It may be necessary for a buyer to have the permit to operate an on-site sewer facility transferred to the buyer."</strong> Check with Liberty County about their specific transfer requirements — this step is often overlooked and can delay closing.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── DOC 6: WIRE FRAUD ─── -->
+<section class="page" id="s6">
+  <div class="doc-header">
+    <div class="doc-num">6</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Six</span>
+      <h2>Wire Fraud Warning</h2>
+      <p>The single most important practical warning in your entire document package. Wire fraud targeting real estate closings is a multi-billion dollar crime — and it targets sellers and buyers exactly like you.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+    <div class="clause">
+      <div class="clause-label">
+        <h3>How It Happens</h3>
+        <span class="tag">Know the Attack</span>
+      </div>
+      <div class="clause-body">
+        <p>Criminals monitor real estate email threads — often through a hacked agent or title company account. Just before closing, they send an email that looks <em>exactly</em> like the title company, with updated wiring instructions. The victim wires their money. It's gone in minutes, often moved internationally and irretrievable.</p>
+        <div class="danger"><b>The One Rule That Protects You</b>If you receive ANY email, text, or message with wiring instructions — stop. Do not wire anything. Call your title company using a phone number you already had saved, not one found in the message. Verify every wiring instruction by voice, every time.</div>
+        <p>The Agency Team will <strong>never</strong> send wiring instructions by email, text, or social media. If you receive such a message appearing to come from us, it is fraud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── DOC 7: BROKERAGE SERVICES ─── -->
+<section class="page" id="s7">
+  <div class="doc-header">
+    <div class="doc-num">7</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Seven</span>
+      <h2>Information About Brokerage Services</h2>
+      <p>Texas law requires agents to give you this form before providing any brokerage services. It explains the different ways an agent can legally represent a party in a transaction.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Broker vs. Agent</h3>
+        <span class="tag">Roles Defined</span>
+      </div>
+      <div class="clause-body">
+        <p>A <strong>Broker</strong> holds the license and bears full legal responsibility for all transactions — that's The Agency Team, LLC. A <strong>Sales Agent</strong> (Yasema Robles) works under the broker's authority. Your contract is with the brokerage; your day-to-day contact is your agent.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Your Agent's Minimum Legal Duties</h3>
+        <span class="tag">Required by Texas Law</span>
+      </div>
+      <div class="clause-body">
+        <p>Your agent must by law: put your interests above their own, inform you of all material information, present all offers and counter-offers, and treat all parties honestly and fairly. These are not optional — they are enforceable obligations.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Types of Representation</h3>
+        <span class="tag">Know Who's on Your Side</span>
+      </div>
+      <div class="clause-body">
+        <table class="simple">
+          <thead><tr><th>Role</th><th>Represents</th><th>When It Applies</th></tr></thead>
+          <tbody>
+            <tr><td>Agent for Seller</td><td>You exclusively</td><td>This listing agreement</td></tr>
+            <tr><td>Agent for Buyer</td><td>Buyer exclusively</td><td>Buyer's representation agreement</td></tr>
+            <tr><td>Intermediary</td><td>Neither side — neutrally</td><td>When broker represents both parties</td></tr>
+            <tr><td>Subagent</td><td>Owner's interests</td><td>No buyer agreement exists</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── DOC 8: CONSUMER NOTICE ─── -->
+<section class="page" id="s8">
+  <div class="doc-header">
+    <div class="doc-num">8</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Document Eight</span>
+      <h2>Consumer Notice</h2>
+      <p>A Texas REALTORS® educational notice covering important topics every seller and buyer should understand before completing a transaction.</p>
+    </div>
+  </div>
+
+  <div class="clauses">
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Appraisal ≠ Inspection</h3>
+        <span class="tag">Key Distinction</span>
+      </div>
+      <div class="clause-body">
+        <p>An <strong>appraisal</strong> determines your home's value for the lender. An <strong>inspection</strong> determines the physical condition of the home for the buyer. Two different professionals, two different purposes. Agents are neither — they cannot opine on property condition.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Flood &amp; Flood Insurance</h3>
+        <span class="tag">Liberty County Context</span>
+      </div>
+      <div class="clause-body">
+        <p>REALTORS® encourage buyers to purchase flood insurance even if the property is not in an official flood zone. In Liberty County, even properties outside flood zones were impacted by major storms. The landlord's or seller's prior insurance never covers the new buyer — they must obtain their own.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Tax Prorations &amp; Exemptions</h3>
+        <span class="tag">Closing Math</span>
+      </div>
+      <div class="clause-body">
+        <p>Taxes are prorated at closing — you pay your share through closing day, the buyer pays theirs after. Your homestead or senior exemptions will <strong>not transfer</strong>. The buyer's tax bill will likely be higher than what you've been paying. Always advise buyers to check the unexempted rate.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>Option Period</h3>
+        <span class="tag">The Buyer's Exit Window</span>
+      </div>
+      <div class="clause-body">
+        <p>Most contracts include an option period (typically 7–10 days) during which the buyer can back out for any reason and receive their earnest money back. They pay a small, non-refundable option fee for this right. The option period is <strong>not extended</strong> by ongoing repair negotiations — extensions must be negotiated separately, in writing, with an additional fee.</p>
+      </div>
+    </div>
+
+    <div class="clause">
+      <div class="clause-label">
+        <h3>MLS Data Accuracy</h3>
+        <span class="tag">Buyer Verification</span>
+      </div>
+      <div class="clause-body">
+        <p>Square footage, tax data, school boundaries, and other information in the MLS comes from third-party sources like appraisal districts. Agents do not verify this data. Buyers and sellers should independently confirm any information they are relying on — especially square footage if it affects the sale price.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─── DOC 9: PROCESS ─── -->
+<section class="page" id="s9">
+  <div class="doc-header">
+    <div class="doc-num">9</div>
+    <div class="doc-header-text">
+      <span class="doc-label">Reference Guide</span>
+      <h2>From Listing to Closing</h2>
+      <p>Every major stage of your home sale — what happens, and what you need to do at each step.</p>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="t-step">
+      <div class="t-dot-col"><div class="t-dot"></div></div>
+      <div class="t-content">
+        <span class="t-phase">Weeks 1–2 · Pre-Listing</span>
+        <h3>Prepare &amp; Price</h3>
+        <p>Complete all disclosures, make recommended repairs, and prepare the home for photography. Your agent prepares a Comparative Market Analysis to establish the right price. Overpricing leads to longer days on market and a lower final sale price.</p>
+        <div class="t-pills">
+          <div class="t-pill">Complete disclosures</div>
+          <div class="t-pill">Declutter &amp; clean</div>
+          <div class="t-pill">Professional photos</div>
+          <div class="t-pill">List exclusions</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-step">
+      <div class="t-dot-col"><div class="t-dot"></div></div>
+      <div class="t-content">
+        <span class="t-phase">Weeks 2–8+ · Active</span>
+        <h3>On the Market</h3>
+        <p>Your listing goes live on MLS and all major real estate sites. Agents schedule showings through Showing Smart. The first 2–3 weeks typically see the most activity. Keep the home clean, leave during showings, and stay in close communication with your agent about feedback.</p>
+        <div class="t-pills">
+          <div class="t-pill">Stay show-ready daily</div>
+          <div class="t-pill">Leave during showings</div>
+          <div class="t-pill">Secure pets</div>
+          <div class="t-pill">Review weekly feedback</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-step">
+      <div class="t-dot-col"><div class="t-dot"></div></div>
+      <div class="t-content">
+        <span class="t-phase">When Offers Arrive</span>
+        <h3>Offer &amp; Negotiation</h3>
+        <p>Your agent presents all offers — you choose to accept, reject, or counter. Evaluate all terms, not just price: option period length, earnest money amount, financing type, closing date, and any requested concessions. Cash offers close faster and carry fewer contingencies.</p>
+        <div class="t-pills">
+          <div class="t-pill">Accept / Counter / Reject</div>
+          <div class="t-pill">Evaluate all terms</div>
+          <div class="t-pill">Respond within 24h</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-step">
+      <div class="t-dot-col"><div class="t-dot"></div></div>
+      <div class="t-content">
+        <span class="t-phase">Days 1–10 Under Contract</span>
+        <h3>Option Period</h3>
+        <p>The buyer conducts their inspection and due diligence. They may request repairs — you are not required to fix everything. Common responses: make specific repairs, offer a price credit, reduce the price. If the buyer terminates during this window, you keep the option fee and the home goes back on market.</p>
+        <div class="t-pills">
+          <div class="t-pill">Allow inspection access</div>
+          <div class="t-pill">Evaluate repair requests</div>
+          <div class="t-pill">Negotiate in writing</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-step">
+      <div class="t-dot-col"><div class="t-dot"></div></div>
+      <div class="t-content">
+        <span class="t-phase">Days 10–35</span>
+        <h3>Appraisal, Title &amp; Loan Processing</h3>
+        <p>The lender orders an appraisal. The title company researches your chain of title. The buyer's loan goes through underwriting. If the appraisal comes in below the contract price, you'll need to renegotiate. Complete any agreed repairs during this period.</p>
+        <div class="t-pills">
+          <div class="t-pill">Complete agreed repairs</div>
+          <div class="t-pill">Do not remove conveying items</div>
+          <div class="t-pill">Start planning your move</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-step">
+      <div class="t-dot-col"><div class="t-dot"></div></div>
+      <div class="t-content">
+        <span class="t-phase">Closing Day</span>
+        <h3>Sign &amp; Transfer</h3>
+        <p>You sign documents at the title company. The title company pays off your mortgage, collects all fees and commission, and wires your net proceeds. You hand over keys, garage remotes, and access codes. The deed is filed. The home has sold.</p>
+        <div class="t-pills">
+          <div class="t-pill">Bring photo ID</div>
+          <div class="t-pill">Deliver all keys &amp; remotes</div>
+          <div class="t-pill">Leave home broom-clean</div>
+          <div class="t-pill">Verify wire receipt</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="rule" style="margin: 56px 0 40px;">
+
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:24px; color:#111;">Your Closing Costs at a Glance</h3>
+  <table class="simple">
+    <thead><tr><th>Item</th><th>Who Pays</th><th>Typical Amount</th></tr></thead>
+    <tbody>
+      <tr><td>Real Estate Commission</td><td>Seller (from proceeds)</td><td>6% of sale price</td></tr>
+      <tr><td>Owner's Title Insurance</td><td>Seller (customary in TX)</td><td>$1,500–$3,000+</td></tr>
+      <tr><td>Existing Mortgage Payoff</td><td>Seller (from proceeds)</td><td>Your loan balance</td></tr>
+      <tr><td>Tax Proration</td><td>Seller (credited to buyer)</td><td>Prorated to closing date</td></tr>
+      <tr><td>HOA Transfer Fee</td><td>Buyer (up to $250)</td><td>Per HOA</td></tr>
+      <tr><td>Recording Fees</td><td>Buyer (typically)</td><td>$50–$200</td></tr>
+      <tr><td><strong>Net Proceeds</strong></td><td><strong>You receive</strong></td><td><strong>Sale price minus all above</strong></td></tr>
+    </tbody>
+  </table>
+
+  <hr class="rule" style="margin: 40px 0;">
+
+  <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:20px; color:#111;">Seller Checklist</h3>
+  <ul class="checks">
+    <li>Complete Seller's Disclosure fully and honestly</li>
+    <li>List all items you want to exclude (take with you)</li>
+    <li>Secure valuables, medications, and personal documents</li>
+    <li>Confirm HOA dues are current with Encino Estates POA</li>
+    <li>Have septic records available for buyer review</li>
+    <li>Verify propane service arrangement</li>
+    <li>Save title company phone number before closing week</li>
+    <li>Never wire money based on email instructions alone</li>
+    <li>Refer all buyer inquiries directly to your agent</li>
+    <li>Remove all personal belongings before closing day</li>
+    <li>Complete agreed repairs promptly once under contract</li>
+    <li>Deliver all keys, remotes, and access codes at closing</li>
+  </ul>
+
+</section>
+
+
 
 <style>
 /* ── SECTION SHELL ── */
@@ -860,7 +1914,7 @@
 <!-- ═══════ END MARKETING PLAN SECTION ═══════ -->
 
 <!-- Instagram embed script — include ONCE per page, at the bottom -->
-<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
