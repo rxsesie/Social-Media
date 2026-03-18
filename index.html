@@ -1,179 +1,866 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Listing Presentation Preview</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f6f4ef;
-      color: #1f1f1f;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #1f1f1f 0%, #4a3b2f 100%);
-      color: white;
-      padding: 72px 24px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
-      letter-spacing: 0.5px;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.6;
-      opacity: 0.92;
-    }
-
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 20px 80px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      color: #8b6b47;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 30px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .stat {
-      background: #f8f6f2;
-      border-radius: 16px;
-      padding: 18px;
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-
-    .list {
-      margin: 20px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #ece7df;
-      line-height: 1.5;
-    }
-
-    .ig-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 400px;
-    }
-
-    .footer-note {
-      margin-top: 24px;
-      font-size: 14px;
-      color: #666;
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategic Marketing Plan — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  /* ── BASE (matches existing guide style) ── */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: #fff; color: #111; font-size: 15px; line-height: 1.65; }
+</style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Modern Listing Presentation</h1>
-    <p>
-      A quick preview page for a property presentation. This layout mixes a clean luxury style with a live Instagram post so you can see how social content feels inside the website UX.
-    </p>
-  </section>
 
-  <main class="wrap">
-    <div class="grid">
-      <section class="card">
-        <div class="eyebrow">Property Marketing Preview</div>
-        <h2>Designed to impress sellers</h2>
-        <p>
-          This mini site can be used as part of your listing presentation. You can show your marketing strategy, your social proof, and a polished visual style all in one place.
-        </p>
+<!-- ═══════════════════════════════════════════════════════════
+     STRATEGIC MARKETING PLAN SECTION
+     Drop this <section> block into your existing listing guide HTML.
+     Requires: Playfair Display + Lato from Google Fonts (already loaded).
+     The Instagram embed script tag at the bottom must appear once per page.
+══════════════════════════════════════════════════════════════ -->
 
-        <div class="stats">
-          <div class="stat">
-            <strong>Pro</strong>
-            Presentation style
-          </div>
-          <div class="stat">
-            <strong>Live</strong>
-            Instagram embed
-          </div>
-          <div class="stat">
-            <strong>Fast</strong>
-            HTML preview
-          </div>
+<style>
+/* ── SECTION SHELL ── */
+.mkt-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ── SECTION HEADER ── */
+.mkt-doc-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #111;
+}
+.mkt-doc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: #eee;
+  line-height: 1;
+  font-style: italic;
+  user-select: none;
+}
+.mkt-doc-label {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #999;
+  display: block;
+  margin-bottom: 8px;
+}
+.mkt-doc-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  color: #111;
+  margin-bottom: 12px;
+}
+.mkt-doc-header p {
+  color: #777;
+  font-size: 0.88rem;
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* ── PILLAR INTRO ROW ── */
+.mkt-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #eee;
+  border: 1px solid #eee;
+  margin-bottom: 64px;
+}
+.mkt-pillar {
+  background: #fff;
+  padding: 28px 24px;
+  transition: background 0.2s;
+}
+.mkt-pillar:hover { background: #f8f8f8; }
+.mkt-pillar-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #e0e0e0;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.mkt-pillar h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: #111;
+  margin-bottom: 6px;
+}
+.mkt-pillar p {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ── SUBSECTION HEADER ── */
+.mkt-sub-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mkt-sub-header .sub-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #ddd;
+  font-style: italic;
+  flex-shrink: 0;
+}
+.mkt-sub-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #111;
+  line-height: 1.2;
+}
+.mkt-sub-header .sub-tag {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* ── SUBSECTION BLOCKS ── */
+.mkt-block {
+  margin-bottom: 56px;
+}
+
+/* ── TWO-COL GRID ── */
+.mkt-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #eee;
+  border: 1px solid #eee;
+}
+.mkt-cell {
+  background: #fff;
+  padding: 28px 24px;
+  transition: background 0.2s;
+}
+.mkt-cell:hover { background: #fafafa; }
+.mkt-cell-icon {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  display: block;
+  filter: grayscale(1);
+}
+.mkt-cell h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: #111;
+  margin-bottom: 8px;
+}
+.mkt-cell p {
+  font-size: 0.82rem;
+  color: #666;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ── THREE-COL GRID ── */
+.mkt-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #eee;
+  border: 1px solid #eee;
+}
+
+/* ── STAT ROW ── */
+.mkt-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #111;
+  border: 1px solid #111;
+  margin: 24px 0 8px;
+}
+.mkt-stat {
+  background: #111;
+  padding: 24px 20px;
+  text-align: center;
+}
+.mkt-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #fff;
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+.mkt-stat-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* ── OPEN HOUSE TIMELINE ── */
+.mkt-oh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #eee;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.mkt-oh-cell {
+  background: #fff;
+  padding: 24px;
+}
+.mkt-oh-week {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #bbb;
+  display: block;
+  margin-bottom: 10px;
+}
+.mkt-oh-cell h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 6px;
+}
+.mkt-oh-cell p {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.mkt-oh-cell.highlight {
+  background: #111;
+}
+.mkt-oh-cell.highlight .mkt-oh-week { color: #555; }
+.mkt-oh-cell.highlight h4 { color: #fff; }
+.mkt-oh-cell.highlight p { color: #888; }
+
+/* ── FULL-WIDTH DARK ROW ── */
+.mkt-dark-row {
+  background: #111;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  align-items: center;
+  margin: 24px 0;
+}
+.mkt-dark-row-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+.mkt-dark-row h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #fff;
+  font-style: italic;
+}
+.mkt-dark-row p {
+  font-size: 0.83rem;
+  color: #888;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── BOLDTRAIL FEATURES ── */
+.mkt-bt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #eee;
+  border: 1px solid #eee;
+}
+.mkt-bt-row {
+  background: #fff;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 16px;
+  align-items: start;
+  transition: background 0.2s;
+}
+.mkt-bt-row:hover { background: #f8f8f8; }
+.mkt-bt-dot {
+  width: 8px;
+  height: 8px;
+  background: #111;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.mkt-bt-row h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+.mkt-bt-row p {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+/* ── DISTRIBUTION LIST ── */
+.mkt-dist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #eee;
+  border: 1px solid #eee;
+}
+.mkt-dist-item {
+  background: #fff;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: background 0.2s;
+}
+.mkt-dist-item:hover { background: #f8f8f8; }
+.mkt-dist-arrow {
+  font-size: 0.75rem;
+  color: #ccc;
+  flex-shrink: 0;
+}
+.mkt-dist-item span {
+  font-size: 0.83rem;
+  color: #333;
+  line-height: 1.4;
+}
+.mkt-dist-item strong {
+  font-weight: 700;
+  color: #111;
+  display: block;
+  font-size: 0.83rem;
+}
+
+/* ── SOCIAL / INSTAGRAM SECTION ── */
+.mkt-social-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+.mkt-social-intro h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #111;
+  line-height: 1.3;
+}
+.mkt-social-intro p {
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── INSTAGRAM EMBED GRID ── */
+.mkt-ig-section {
+  margin-bottom: 56px;
+}
+
+.mkt-ig-label {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #bbb;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Yasema row */
+.mkt-ig-agent {
+  margin-bottom: 40px;
+}
+.mkt-ig-agent-name {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #999;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mkt-ig-agent-name::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: #111;
+  display: inline-block;
+}
+
+.mkt-ig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.mkt-ig-card {
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.mkt-ig-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Force embeds to fill card cleanly */
+.mkt-ig-card .instagram-media {
+  margin: 0 !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ── CALLOUT NOTE (reused from guide style) ── */
+.mkt-note {
+  background: #f9f9f9;
+  border-left: 3px solid #111;
+  padding: 14px 18px;
+  font-size: 0.83rem;
+  color: #444;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+.mkt-note b {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #111;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 760px) {
+  .mkt-section { padding: 60px 24px; }
+  .mkt-doc-header { grid-template-columns: 1fr; gap: 12px; }
+  .mkt-doc-num { font-size: 3rem; }
+  .mkt-pillars,
+  .mkt-two,
+  .mkt-three,
+  .mkt-oh-grid,
+  .mkt-bt-grid,
+  .mkt-dist { grid-template-columns: 1fr; }
+  .mkt-stats { grid-template-columns: repeat(2, 1fr); }
+  .mkt-dark-row { grid-template-columns: 1fr; gap: 16px; }
+  .mkt-social-intro { grid-template-columns: 1fr; }
+  .mkt-sub-header .sub-tag { display: none; }
+}
+@media (max-width: 500px) {
+  .mkt-stats { grid-template-columns: 1fr 1fr; }
+  .mkt-ig-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- ══════════════════════════════════════
+     SECTION: STRATEGIC MARKETING PLAN
+══════════════════════════════════════ -->
+<section class="mkt-section" id="marketing-plan">
+
+  <!-- Header -->
+  <div class="mkt-doc-header">
+    <div class="mkt-doc-num">10</div>
+    <div>
+      <span class="mkt-doc-label">Your Marketing Strategy</span>
+      <h2>Strategic Marketing Plan</h2>
+      <p>From the day you sign, every tool, channel, and platform works in parallel to position your property in front of the most qualified buyers — with relentless consistency until it sells.</p>
+    </div>
+  </div>
+
+  <!-- Six Pillars intro -->
+  <div class="mkt-pillars">
+    <div class="mkt-pillar">
+      <div class="mkt-pillar-num">01</div>
+      <h4>Open Houses</h4>
+      <p>Consistent, high-frequency exposure creating urgency and competition.</p>
+    </div>
+    <div class="mkt-pillar">
+      <div class="mkt-pillar-num">02</div>
+      <h4>Communication</h4>
+      <p>Weekly updates and real-time feedback after every buyer interaction.</p>
+    </div>
+    <div class="mkt-pillar">
+      <div class="mkt-pillar-num">03</div>
+      <h4>Professional Media</h4>
+      <p>Photography, drone, video, and social reels crafted for luxury presentation.</p>
+    </div>
+    <div class="mkt-pillar">
+      <div class="mkt-pillar-num">04</div>
+      <h4>Digital Advertising</h4>
+      <p>Targeted campaigns reaching buyers by geography, behavior, and intent.</p>
+    </div>
+    <div class="mkt-pillar">
+      <div class="mkt-pillar-num">05</div>
+      <h4>BoldTrail Technology</h4>
+      <p>CRM automation, analytics, and listing performance optimization.</p>
+    </div>
+    <div class="mkt-pillar">
+      <div class="mkt-pillar-num">06</div>
+      <h4>Maximum Distribution</h4>
+      <p>MLS, major portals, agent networks, and private buyer databases.</p>
+    </div>
+  </div>
+
+  <!-- ── 01 OPEN HOUSES ── -->
+  <div class="mkt-block" id="mkt-openhouses">
+    <div class="mkt-sub-header">
+      <span class="sub-num">01</span>
+      <h3>Open House Strategy</h3>
+      <span class="sub-tag">Frequency · Urgency · Competition</span>
+    </div>
+
+    <div class="mkt-oh-grid">
+      <div class="mkt-oh-cell">
+        <span class="mkt-oh-week">Standard Cadence</span>
+        <h4>Every Other Week</h4>
+        <p>Consistent biweekly open houses keep your listing active in buyers' minds and prevent market fatigue from setting in.</p>
+      </div>
+      <div class="mkt-oh-cell highlight">
+        <span class="mkt-oh-week">High Demand Periods</span>
+        <h4>Up to 3 per Month</h4>
+        <p>When activity is strong, we move to weekly open houses — maximizing exposure at the moment buyers are most engaged.</p>
+      </div>
+      <div class="mkt-oh-cell">
+        <span class="mkt-oh-week">Why It Works</span>
+        <h4>Buyer Competition</h4>
+        <p>Multiple buyers in one space creates urgency. Seeing others interested motivates faster, stronger offers.</p>
+      </div>
+    </div>
+
+    <div class="mkt-two">
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">📋</span>
+        <h4>Pre-Open House Prep</h4>
+        <p>We promote each open house across social media, email campaigns, and the MLS 48–72 hours in advance to maximize attendance. Signage is placed strategically in the surrounding neighborhood.</p>
+      </div>
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">📊</span>
+        <h4>Post-Open House Reporting</h4>
+        <p>After every event you receive a full debrief — how many attended, buyer profiles, interest levels, and any feedback we gathered. Every piece of information refines our strategy.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 02 COMMUNICATION ── -->
+  <div class="mkt-block" id="mkt-comms">
+    <div class="mkt-sub-header">
+      <span class="sub-num">02</span>
+      <h3>Communication &amp; Updates</h3>
+      <span class="sub-tag">Transparency · Feedback · Strategy</span>
+    </div>
+
+    <div class="mkt-dark-row">
+      <div>
+        <span class="mkt-dark-row-label">Our Commitment</span>
+        <h4>"You will never have to wonder what's happening with your sale."</h4>
+      </div>
+      <p>We believe sellers deserve to know exactly where they stand at all times. That means structured weekly reports and real-time updates the moment a meaningful buyer interaction occurs — not a summary days later.</p>
+    </div>
+
+    <div class="mkt-three">
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">📅</span>
+        <h4>Weekly Reports</h4>
+        <p>Every week you receive a market activity summary: showing count, online views, comparable sales, and your agent's strategic read on where the listing stands.</p>
+      </div>
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">⚡</span>
+        <h4>Real-Time Buyer Updates</h4>
+        <p>When a buyer or buyer's agent expresses significant interest, asks specific questions, or requests follow-up — you hear about it the same day.</p>
+      </div>
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">🎯</span>
+        <h4>Strategy Adjustments</h4>
+        <p>Feedback from showings and open houses directly informs pricing conversations, staging adjustments, and marketing pivots. Data drives every decision.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 03 PROFESSIONAL MEDIA ── -->
+  <div class="mkt-block" id="mkt-media">
+    <div class="mkt-sub-header">
+      <span class="sub-num">03</span>
+      <h3>Professional Media Production</h3>
+      <span class="sub-tag">Photography · Drone · Video · Reels</span>
+    </div>
+
+    <div class="mkt-two">
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">📸</span>
+        <h4>Professional Photography</h4>
+        <p>High-resolution interior and exterior photography shot by a professional real estate photographer using lighting, staging guidance, and post-processing to make every room its best version.</p>
+      </div>
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">🚁</span>
+        <h4>Drone Aerial Photography</h4>
+        <p>Where applicable, licensed drone photography captures your property's lot, surroundings, and neighborhood context — especially powerful for acreage properties, waterfront, and larger estates.</p>
+      </div>
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">🎬</span>
+        <h4>Video Walkthrough</h4>
+        <p>A professionally edited video walkthrough gives remote buyers a true feel for the flow of the home. Embedded in the MLS, shared across platforms, and used in ad campaigns.</p>
+      </div>
+      <div class="mkt-cell">
+        <span class="mkt-cell-icon">📱</span>
+        <h4>Short-Form Social Reels</h4>
+        <p>Vertical video content optimized for Instagram Reels, Facebook, and TikTok. These cinematic short-form pieces reach buyers who discover homes through social feeds, not just search portals.</p>
+      </div>
+    </div>
+
+    <div class="mkt-note">
+      <b>Visual Storytelling</b>
+      Buyers form an emotional connection with a home before they ever step inside. Professional media is not an upgrade — it is the standard for every listing we represent.
+    </div>
+  </div>
+
+  <!-- ── 04 DIGITAL ADVERTISING ── -->
+  <div class="mkt-block" id="mkt-ads">
+    <div class="mkt-sub-header">
+      <span class="sub-num">04</span>
+      <h3>Digital Advertising Campaigns</h3>
+      <span class="sub-tag">Targeting · Funnels · Reach</span>
+    </div>
+
+    <div class="mkt-stats">
+      <div class="mkt-stat">
+        <span class="mkt-stat-num">Meta</span>
+        <span class="mkt-stat-label">Facebook &amp;<br>Instagram Ads</span>
+      </div>
+      <div class="mkt-stat">
+        <span class="mkt-stat-num">Geo</span>
+        <span class="mkt-stat-label">Geographic<br>Targeting</span>
+      </div>
+      <div class="mkt-stat">
+        <span class="mkt-stat-num">Re</span>
+        <span class="mkt-stat-label">Retargeting<br>Campaigns</span>
+      </div>
+      <div class="mkt-stat">
+        <span class="mkt-stat-num">CRM</span>
+        <span class="mkt-stat-label">Lead Capture<br>Funnels</span>
+      </div>
+    </div>
+
+    <div class="mkt-three">
+      <div class="mkt-cell">
+        <h4>Behavioral Targeting</h4>
+        <p>Ads are served to users who have demonstrated real estate purchase intent — searching listings, visiting home-buying sites, engaging with real estate content. Your listing reaches the right audience, not a random one.</p>
+      </div>
+      <div class="mkt-cell">
+        <h4>Geographic Campaigns</h4>
+        <p>We target by zip code, radius, and commute patterns — reaching buyers who are actively relocating to your area or searching within your specific market. Liberty County, Dayton, and surrounding Houston metro audiences are prioritized.</p>
+      </div>
+      <div class="mkt-cell">
+        <h4>Lead Capture Funnels</h4>
+        <p>Every ad drives to a purpose-built landing page that captures buyer contact information. Those leads feed directly into our CRM for immediate, automated follow-up — no inquiry falls through the cracks.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 05 BOLDTRAIL ── -->
+  <div class="mkt-block" id="mkt-boldtrail">
+    <div class="mkt-sub-header">
+      <span class="sub-num">05</span>
+      <h3>BoldTrail Marketing Technology</h3>
+      <span class="sub-tag">CRM · Automation · Analytics</span>
+    </div>
+
+    <div class="mkt-dark-row">
+      <div>
+        <span class="mkt-dark-row-label">Powered By</span>
+        <h4>BoldTrail — The Industry's Leading Real Estate OS</h4>
+      </div>
+      <p>BoldTrail is an enterprise-grade real estate platform that combines lead management, marketing automation, and performance analytics into one system — ensuring every buyer inquiry is captured, tracked, and followed up on with precision timing.</p>
+    </div>
+
+    <div class="mkt-bt-grid">
+      <div class="mkt-bt-row">
+        <div class="mkt-bt-dot"></div>
+        <div>
+          <h4>CRM &amp; Lead Tracking</h4>
+          <p>Every inquiry, showing request, and buyer interaction is logged and tracked. We know who is interested, when they engaged, and how often — allowing targeted, personalized follow-up at the right moment.</p>
+        </div>
+      </div>
+      <div class="mkt-bt-row">
+        <div class="mkt-bt-dot"></div>
+        <div>
+          <h4>Marketing Automation</h4>
+          <p>Automated drip campaigns nurture interested buyers with listing updates, market insights, and relevant content — keeping your property top of mind even when buyers are in research mode.</p>
+        </div>
+      </div>
+      <div class="mkt-bt-row">
+        <div class="mkt-bt-dot"></div>
+        <div>
+          <h4>Listing Exposure Optimization</h4>
+          <p>BoldTrail's IDX integration and syndication tools ensure your listing appears correctly across hundreds of platforms — and surfaces higher in search results for buyers actively searching your area.</p>
+        </div>
+      </div>
+      <div class="mkt-bt-row">
+        <div class="mkt-bt-dot"></div>
+        <div>
+          <h4>Performance Analytics</h4>
+          <p>Real-time dashboards show listing views, click-through rates, lead source performance, and ad spend ROI. Every marketing decision is backed by live data, not guesswork.</p>
+        </div>
+      </div>
+      <div class="mkt-bt-row">
+        <div class="mkt-bt-dot"></div>
+        <div>
+          <h4>Follow-Up Workflows</h4>
+          <p>Automated follow-up sequences ensure no lead goes cold. BoldTrail triggers personalized outreach based on buyer behavior — whether they viewed the listing once or five times in a week.</p>
+        </div>
+      </div>
+      <div class="mkt-bt-row">
+        <div class="mkt-bt-dot"></div>
+        <div>
+          <h4>Conversion Rate Improvement</h4>
+          <p>By combining behavioral data with timely outreach, BoldTrail consistently improves the rate at which inquiries become showings and showings become offers — shortening your time on market.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 06 DISTRIBUTION ── -->
+  <div class="mkt-block" id="mkt-distribution">
+    <div class="mkt-sub-header">
+      <span class="sub-num">06</span>
+      <h3>Listing Distribution Strategy</h3>
+      <span class="sub-tag">MLS · Portals · Network · Database</span>
+    </div>
+
+    <div class="mkt-dist">
+      <div class="mkt-dist-item">
+        <span class="mkt-dist-arrow">→</span>
+        <div>
+          <strong>MLS (HAR)</strong>
+          <span>Filed within 1 business day of public marketing. Access to every agent in the Greater Houston area.</span>
+        </div>
+      </div>
+      <div class="mkt-dist-item">
+        <span class="mkt-dist-arrow">→</span>
+        <div>
+          <strong>Zillow &amp; Realtor.com</strong>
+          <span>Automatic syndication to the two most visited real estate search portals in the country.</span>
+        </div>
+      </div>
+      <div class="mkt-dist-item">
+        <span class="mkt-dist-arrow">→</span>
+        <div>
+          <strong>Redfin · Trulia · Homes.com</strong>
+          <span>Full syndication across all major secondary portals ensuring maximum search visibility.</span>
+        </div>
+      </div>
+      <div class="mkt-dist-item">
+        <span class="mkt-dist-arrow">→</span>
+        <div>
+          <strong>Agent Network Promotion</strong>
+          <span>Direct outreach to buyer's agents in the Houston metro with active buyer clients in your price range.</span>
+        </div>
+      </div>
+      <div class="mkt-dist-item">
+        <span class="mkt-dist-arrow">→</span>
+        <div>
+          <strong>Email Campaigns</strong>
+          <span>Your listing is featured in curated email campaigns sent to our active buyer and agent database.</span>
+        </div>
+      </div>
+      <div class="mkt-dist-item">
+        <span class="mkt-dist-arrow">→</span>
+        <div>
+          <strong>Private Buyer Database</strong>
+          <span>Direct outreach to pre-qualified buyers in our CRM who match your property's profile — before they even search.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 07 SOCIAL MEDIA ── -->
+  <div class="mkt-ig-section" id="mkt-social">
+    <div class="mkt-sub-header">
+      <span class="sub-num">07</span>
+      <h3>Social Media Presence</h3>
+      <span class="sub-tag">Instagram · Reels · Listings</span>
+    </div>
+
+    <div class="mkt-social-intro">
+      <h3>Your home, on every screen that matters.</h3>
+      <p>Our agents maintain an active, consistent social media presence across Instagram — producing listing reels, market content, and property features that organically reach buyers who are not actively searching but are ready to act. Below is a sample of our recent work promoting listings just like yours.</p>
+    </div>
+
+    <!-- Rose's posts -->
+    <div class="mkt-ig-agent">
+      <div class="mkt-ig-agent-name">Rosali Zaldivar · @rosaliz_realtor</div>
+      <div class="mkt-ig-grid">
+
+        <div class="mkt-ig-card">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQ4dVKcDhPB/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DQ4dVKcDhPB/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="display:flex;flex-direction:row;align-items:center;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div></div></div><div style="padding:19% 0;"></div><div style="display:block;height:50px;margin:0 auto 12px;width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top:8px;"><div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div></div><div style="padding:12.5% 0;"></div><div style="display:flex;flex-direction:row;margin-bottom:14px;align-items:center;"><div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(0px) translateY(7px);"></div><div style="background-color:#F4F4F4;height:12.5px;transform:rotate(-45deg) translateX(3px) translateY(1px);width:12.5px;flex-grow:0;margin-right:14px;margin-left:2px;"></div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(9px) translateY(-18px);"></div></div><div style="margin-left:8px;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:20px;width:20px;"></div><div style="width:0;height:0;border-top:2px solid transparent;border-left:6px solid #f4f4f4;border-bottom:2px solid transparent;transform:translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left:auto;"><div style="width:0px;border-top:8px solid #F4F4F4;border-right:8px solid transparent;transform:translateY(16px);"></div><div style="background-color:#F4F4F4;flex-grow:0;height:12px;width:16px;transform:translateY(-4px);"></div><div style="width:0;height:0;border-top:8px solid #F4F4F4;border-left:8px solid transparent;transform:translateY(-4px) translateX(8px);"></div></div></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin-bottom:24px;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:224px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:144px;"></div></div></a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/p/DQ4dVKcDhPB/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by Rosali Zaldivar Carvajal (@rosaliz_realtor)</a></p></div></blockquote>
         </div>
 
-        <ul class="list">
-          <li>Elegant hero section for your brand and value proposition.</li>
-          <li>Live embedded post to show active marketing and social presence.</li>
-          <li>Clean card layout that can later expand into testimonials, stats, and property highlights.</li>
-          <li>Mobile responsive structure so it still looks clean on smaller screens.</li>
-        </ul>
-      </section>
+        <div class="mkt-ig-card">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DSSr0OXDTOx/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/reel/DSSr0OXDTOx/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="display:flex;flex-direction:row;align-items:center;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div></div></div><div style="padding:19% 0;"></div><div style="display:block;height:50px;margin:0 auto 12px;width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top:8px;"><div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div></div><div style="padding:12.5% 0;"></div><div style="display:flex;flex-direction:row;margin-bottom:14px;align-items:center;"><div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(0px) translateY(7px);"></div><div style="background-color:#F4F4F4;height:12.5px;transform:rotate(-45deg) translateX(3px) translateY(1px);width:12.5px;flex-grow:0;margin-right:14px;margin-left:2px;"></div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(9px) translateY(-18px);"></div></div><div style="margin-left:8px;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:20px;width:20px;"></div><div style="width:0;height:0;border-top:2px solid transparent;border-left:6px solid #f4f4f4;border-bottom:2px solid transparent;transform:translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left:auto;"><div style="width:0px;border-top:8px solid #F4F4F4;border-right:8px solid transparent;transform:translateY(16px);"></div><div style="background-color:#F4F4F4;flex-grow:0;height:12px;width:16px;transform:translateY(-4px);"></div><div style="width:0;height:0;border-top:8px solid #F4F4F4;border-left:8px solid transparent;transform:translateY(-4px) translateX(8px);"></div></div></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin-bottom:24px;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:224px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:144px;"></div></div></a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/reel/DSSr0OXDTOx/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by Rosali Zaldivar Carvajal (@rosaliz_realtor)</a></p></div></blockquote>
+        </div>
 
-      <section class="card">
-        <div class="eyebrow">Instagram Preview</div>
-        <h2>Embedded post</h2>
-        <div class="ig-wrap">
-          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DS216M5FJct/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DS216M5FJct/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px;
+      </div>
+    </div>
+
+    <!-- Yasema's posts -->
+    <div class="mkt-ig-agent">
+      <div class="mkt-ig-agent-name">Yasema Robles · @yasema.robles</div>
+      <div class="mkt-ig-grid">
+
+        <div class="mkt-ig-card">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DUWcYm8D_VJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/reel/DUWcYm8D_VJ/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="display:flex;flex-direction:row;align-items:center;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div></div></div><div style="padding:19% 0;"></div><div style="display:block;height:50px;margin:0 auto 12px;width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top:8px;"><div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div></div><div style="padding:12.5% 0;"></div><div style="display:flex;flex-direction:row;margin-bottom:14px;align-items:center;"><div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(0px) translateY(7px);"></div><div style="background-color:#F4F4F4;height:12.5px;transform:rotate(-45deg) translateX(3px) translateY(1px);width:12.5px;flex-grow:0;margin-right:14px;margin-left:2px;"></div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(9px) translateY(-18px);"></div></div><div style="margin-left:8px;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:20px;width:20px;"></div><div style="width:0;height:0;border-top:2px solid transparent;border-left:6px solid #f4f4f4;border-bottom:2px solid transparent;transform:translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left:auto;"><div style="width:0px;border-top:8px solid #F4F4F4;border-right:8px solid transparent;transform:translateY(16px);"></div><div style="background-color:#F4F4F4;flex-grow:0;height:12px;width:16px;transform:translateY(-4px);"></div><div style="width:0;height:0;border-top:8px solid #F4F4F4;border-left:8px solid transparent;transform:translateY(-4px) translateX(8px);"></div></div></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin-bottom:24px;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:224px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:144px;"></div></div></a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/reel/DUWcYm8D_VJ/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by Yasema Robles • Houston Realtor® (@yasema.robles)</a></p></div></blockquote>
+        </div>
+
+        <div class="mkt-ig-card">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DV86j6OjhnE/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/reel/DV86j6OjhnE/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF;line-height:0;padding:0 0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="display:flex;flex-direction:row;align-items:center;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:40px;margin-right:14px;width:40px;"></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:100px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:60px;"></div></div></div><div style="padding:19% 0;"></div><div style="display:block;height:50px;margin:0 auto 12px;width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top:8px;"><div style="color:#3897f0;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:550;line-height:18px;">View this post on Instagram</div></div><div style="padding:12.5% 0;"></div><div style="display:flex;flex-direction:row;margin-bottom:14px;align-items:center;"><div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(0px) translateY(7px);"></div><div style="background-color:#F4F4F4;height:12.5px;transform:rotate(-45deg) translateX(3px) translateY(1px);width:12.5px;flex-grow:0;margin-right:14px;margin-left:2px;"></div><div style="background-color:#F4F4F4;border-radius:50%;height:12.5px;width:12.5px;transform:translateX(9px) translateY(-18px);"></div></div><div style="margin-left:8px;"><div style="background-color:#F4F4F4;border-radius:50%;flex-grow:0;height:20px;width:20px;"></div><div style="width:0;height:0;border-top:2px solid transparent;border-left:6px solid #f4f4f4;border-bottom:2px solid transparent;transform:translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left:auto;"><div style="width:0px;border-top:8px solid #F4F4F4;border-right:8px solid transparent;transform:translateY(16px);"></div><div style="background-color:#F4F4F4;flex-grow:0;height:12px;width:16px;transform:translateY(-4px);"></div><div style="width:0;height:0;border-top:8px solid #F4F4F4;border-left:8px solid transparent;transform:translateY(-4px) translateX(8px);"></div></div></div><div style="display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin-bottom:24px;"><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;margin-bottom:6px;width:224px;"></div><div style="background-color:#F4F4F4;border-radius:4px;flex-grow:0;height:14px;width:144px;"></div></div></a><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;line-height:17px;margin-bottom:0;margin-top:8px;overflow:hidden;padding:8px 0 7px;text-align:center;text-overflow:ellipsis;white-space:nowrap;"><a href="https://www.instagram.com/reel/DV86j6OjhnE/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;" target="_blank">A post shared by Yasema Robles • Houston Realtor® (@yasema.robles)</a></p></div></blockquote>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end mkt-ig-section -->
+
+</section>
+<!-- ═══════ END MARKETING PLAN SECTION ═══════ -->
+
+<!-- Instagram embed script — include ONCE per page, at the bottom -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>
